@@ -21,6 +21,11 @@ pipeline {
         stage('Test') { 
             steps{            
                 sh 'echo MyTest'
+                
+                sh '''
+                    cd build
+                    ./runUnitTests
+                '''
             }
         }
         
