@@ -25,8 +25,15 @@ pipeline {
                 sh '''
                     cd build
                     ./runUnitTests
-                    junit '*.xml'
-                '''
+                    
+                   '''
+                 sh './gradlew check'
+           }
+            
+           post {
+                always {
+                    junit 'build/reports/**/*.xml'
+                }
             }
         }
         
