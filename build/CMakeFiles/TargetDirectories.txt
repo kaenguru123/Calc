@@ -1,5 +1,0 @@
-/home/julian/Workspace/repos/Calc/build/CMakeFiles/rebuild_cache.dir
-/home/julian/Workspace/repos/Calc/build/CMakeFiles/edit_cache.dir
-/home/julian/Workspace/repos/Calc/build/CMakeFiles/test.dir
-/home/julian/Workspace/repos/Calc/build/CMakeFiles/progy.dir
-/home/julian/Workspace/repos/Calc/build/CMakeFiles/runUnitTests.dir
