@@ -24,17 +24,17 @@ pipeline {
             }
         }
         
-        stage('Deploy') { 
-            steps{            
-                sh 'echo MyDeploy'
+         stage('Deploy - Staging') {
+            steps {
+                sh './deploy staging'
+                sh './run-smoke-tests'
             }
         }
-    }
-    
-    post {
-    always {
-            archive "project/embsw/debug/**/*"
-           stash includes: 'project/embsw/debug/project_R0.bin', name: 'debugBuiltArtifacts'
-           }
+        
+        stage('Deploy - Production') {
+            steps {
+                sh './deploy production'
+            }
+        }
     }
 }
