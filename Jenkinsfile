@@ -25,7 +25,7 @@ pipeline {
                 sh '''
                     cd build
                     ./runUnitTests
-                    junit '**/target/*.xml'
+                    junit '*.xml'
                 '''
             }
         }
