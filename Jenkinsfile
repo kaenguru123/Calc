@@ -26,14 +26,13 @@ pipeline {
         
          stage('Deploy - Staging') {
             steps {
-                sh './deploy staging'
-                sh './run-smoke-tests'
+                sh 'echo MyDeploy Stag.'
             }
         }
         
         stage('Deploy - Production') {
             steps {
-                sh './deploy production'
+                sh 'echo MyDeploy Prod.'
             }
         }
     }
