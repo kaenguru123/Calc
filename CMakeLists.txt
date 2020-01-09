@@ -24,7 +24,7 @@ add_executable(runUnitTests test/test.cpp src/calc.cpp)
 target_include_directories(runUnitTests PRIVATE inc)
 
 # Link test executable against gtest & gtest_main
-target_link_libraries(runUnitTests ${GTEST_LIBRARY_DEBUG} ${GTEST_MAIN_LIBRARY_DEBUG})ssssss
+target_link_libraries(runUnitTests ${GTEST_LIBRARY_DEBUG} ${GTEST_MAIN_LIBRARY_DEBUG}}
 target_link_libraries(runUnitTests gtest
                                    gtest_main pthread)
 
