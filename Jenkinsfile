@@ -28,17 +28,10 @@ pipeline {
                    '''   
            }
         }
-        post { 
-            always {
-                archiveArtifacts artifacts: 'build/progy', fingerprint: true
-                junit 'build/testCase2.xml' 
-            } 
-        }
         
          stage('Deploy - Staging') {
             steps {
                 sh 'echo MyDeploy Stag.'
-                copyArtifacts(projectName: 'Calc');
             }
         }
         
@@ -46,6 +39,12 @@ pipeline {
             steps {
                 sh 'echo MyDeploy Prod.'
             }
+        }
+        post { 
+            always {
+                archiveArtifacts artifacts: 'build/progy', fingerprint: true
+                junit 'build/testCase2.xml' 
+            } 
         }
     }
 }
