@@ -24,17 +24,11 @@ pipeline {
                 
                 sh '''
                     cd build
-                    ./runUnitTests
-                    
+                    ./runUnitTests --gtest_output=xml:testCase2.xml
                    '''
-                 sh './gradlew check'
+                
+                
            }
-            
-           post {
-                always {
-                    junit 'build/reports/**/*.xml'
-                }
-            }
         }
         
          stage('Deploy - Staging') {
