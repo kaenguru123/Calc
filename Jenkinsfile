@@ -40,11 +40,11 @@ pipeline {
                 sh 'echo MyDeploy Prod.'
             }
         }
-        post { 
-            always {
-                archiveArtifacts artifacts: 'build/progy', fingerprint: true
-                junit 'build/testCase2.xml' 
-            } 
-        }
+    }
+    post { 
+        always {
+            archiveArtifacts artifacts: 'build/progy', fingerprint: true
+            junit 'build/testCase2.xml' 
+        } 
     }
 }
