@@ -34,7 +34,7 @@ pipeline {
          stage('Deploy - Staging') {
             steps {
                 sh 'echo MyDeploy Stag.'
-                copyArtifacts(projectName: 'sourceproject');
+                copyArtifacts(projectName: 'Calc');
             }
         }
         
