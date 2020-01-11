@@ -25,10 +25,14 @@ pipeline {
                 sh '''
                     cd build
                     ./runUnitTests --gtest_output=xml:testCase2.xml
-                   '''
-                
-                
+                   '''   
            }
+        }
+        post { 
+            always {
+                archiveArtifacts artifacts: 'build/progy', fingerprint: true
+                junit 'build/testCase2.xml' 
+            } 
         }
         
          stage('Deploy - Staging') {
