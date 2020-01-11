@@ -13,6 +13,7 @@ pipeline {
                     cmake ..
                     echo make...
                     make
+                    sudo chmod +x progy
                 '''
                 
             }
